@@ -3,84 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Bendeck Group</title>
+  <title>The Bendeck Group — Coming Soon</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      min-height: 100vh;
+      height: 100vh;
+      font-family: "Georgia", serif;
+      background: url('https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&fit=crop&w=1920&q=80')
+        no-repeat center center/cover;
       color: #fff;
-      background: linear-gradient(120deg, rgba(0,0,0,.4), rgba(0,0,0,.28)),
-        url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1900&q=70")
-        center center / cover no-repeat fixed;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 2.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
     }
-    .wrap {
-      max-width: 560px;
+
+    /* Overlay for better text contrast */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 0;
     }
-    .brand {
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      font-size: .75rem;
-      margin-bottom: 1.6rem;
-      opacity: .9;
-    }
+
     h1 {
-      font-size: clamp(2.5rem, 5vw, 3.3rem);
-      font-weight: 600;
-      margin-bottom: .8rem;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      z-index: 1;
+      animation: fadeIn 2s ease-out;
     }
-    p {
-      font-size: 1rem;
-      line-height: 1.6;
-      opacity: .9;
-      margin-bottom: 1.1rem;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ddd;
+      z-index: 1;
+      animation: fadeIn 3s ease-out;
     }
-    .tag {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 999px;
-      padding: .35rem .7rem;
-      font-size: .65rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-    a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,.28);
-    }
+
     footer {
-      position: fixed;
-      bottom: 1.2rem;
-      left: 0;
-      right: 0;
-      text-align: center;
-      font-size: .7rem;
-      color: rgba(255,255,255,.75);
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+      z-index: 1;
+      animation: fadeIn 4s ease-out;
     }
-    @media (max-width: 540px) {
-      body { background-attachment: scroll; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="brand">THE BENDECK GROUP</div>
-    <div class="tag">Private Investment & Holdings</div>
-    <h1>Coming Soon</h1>
-    <p>A family platform for investments, real assets, and purpose-driven projects.</p>
-    <p>Contact: <a href="mailto:miguel@thebendeckgroup.com">miguel@thebendeckgroup.com</a></p>
-  </div>
-  <footer>© <span id="year"></span> The Bendeck Group</footer>
+  <h1>The Bendeck Group</h1>
+  <h2>Faithful Stewardship — Coming Soon</h2>
+  <footer>© <span id="year"></span> The Bendeck Group. All rights reserved.</footer>
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
