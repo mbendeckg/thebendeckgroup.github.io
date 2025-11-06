@@ -27,12 +27,13 @@
     }
 
     .brand {
-      letter-spacing: .28em;
+      letter-spacing: .32em;
       text-transform: uppercase;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 600;
       margin-bottom: 0.8rem;
       opacity: .95;
+      text-shadow: 0 1px 3px rgba(0,0,0,.3);
     }
 
     .tag {
@@ -40,10 +41,13 @@
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 999px;
-      padding: .5rem 1.2rem;
-      font-size: .9rem;
-      letter-spacing: .08em;
+      padding: .45rem 1.1rem;
+      font-size: .85rem;
+      letter-spacing: .12em;
       text-transform: uppercase;
+      text-shadow: 0 1px 2px rgba(0,0,0,.3);
+      margin-bottom: 2rem;
+      animation: fadeIn 2.2s ease-in forwards;
     }
 
     /* --- CENTER CONTENT --- */
@@ -59,16 +63,17 @@
 
     h1 {
       font-size: clamp(2rem, 4.5vw, 2.8rem);
-      font-weight: 600;
-      margin-bottom: 1rem;
+      font-weight: 500;
+      text-shadow: 0 2px 6px rgba(0,0,0,.4); 
+      animation: fadeIn 2.5s ease-in forwards;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.6;
-      opacity: .9;
-      max-width: 600px;
-      margin: 0 auto;
+      opacity: .92;
+      text-shadow: 0 1px 4px rgba(0,0,0,.35);
+       animation: fadeIn 3s ease-in forwards;
     }
 
     /* --- FOOTER --- */
@@ -81,7 +86,12 @@
     @media (max-width: 540px) {
       body { background-attachment: scroll; }
     }
-  </style>
+  /* Smooth fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 <body>
   <header>
