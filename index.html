@@ -5,22 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Bendeck Group — Coming Soon</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       height: 100vh;
       font-family: "Georgia", serif;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80')
+      background: url('https://images.unsplash.com/photo-1508264165352-258859e62245?auto=format&fit=crop&w=1920&q=80')
         no-repeat center center/cover;
       color: #fff;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
+    /* Overlay for better text contrast */
     body::before {
       content: "";
       position: absolute;
@@ -29,59 +35,49 @@
       z-index: 0;
     }
 
-    .header {
-      position: absolute;
-      top: 12%;
-      text-align: center;
-      z-index: 1;
-    }
-
     h1 {
-      font-size: clamp(2.8rem, 5vw, 3.4rem);
+      font-size: 3rem;
       letter-spacing: 2px;
-      margin-bottom: 0.6rem;
-    }
-
-    .tagline {
-      display: inline-block;
-      font-size: 0.9rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      padding: 0.4em 1em;
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 50px;
-      opacity: 0.9;
-    }
-
-    .center {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 1;
-    }
-
-    .coming-soon {
-      font-size: clamp(2rem, 5vw, 3rem);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 600;
       margin-bottom: 1rem;
+      z-index: 1;
+      animation: fadeIn 2s ease-out;
     }
 
-    p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #eee;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ddd;
+      z-index: 1;
+      animation: fadeIn 3s ease-out;
     }
 
     footer {
       position: absolute;
       bottom: 20px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #ccc;
       z-index: 1;
+      animation: fadeIn 4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Bendeck Group</h1>
+  <h2>Faithful Stewardship — Coming Soon</h2>
+  <footer>© <span id="year"></span> The Bendeck Group. All rights reserved.</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
