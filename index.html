@@ -6,11 +6,13 @@
   <title>The Bendeck Group</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       min-height: 100vh;
       color: #fff;
-      background: linear-gradient(120deg, rgba(0,0,0,.4), rgba(0,0,0,.28)),
+      background:
+        linear-gradient(120deg, rgba(0,0,0,.38), rgba(0,0,0,.22)),
         url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1900&q=70")
         center center / cover no-repeat fixed;
       display: flex;
@@ -20,7 +22,7 @@
       text-align: center;
     }
 
-    /* --- TOP CREST --- */
+    /* top crest */
     header {
       padding-top: 2.5rem;
       text-align: center;
@@ -29,11 +31,12 @@
     .brand {
       letter-spacing: .32em;
       text-transform: uppercase;
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: 1.6rem;
+      font-weight: 700;
       margin-bottom: 0.8rem;
-      opacity: .95;
-      text-shadow: 0 1px 3px rgba(0,0,0,.3);
+      opacity: .97;
+      text-shadow: 0 1px 3px rgba(0,0,0,.35);
+      animation: fadeIn 1.2s ease-out forwards;
     }
 
     .tag {
@@ -41,16 +44,16 @@
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 999px;
-      padding: .45rem 1.1rem;
+      padding: .45rem 1.2rem;
       font-size: .85rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       text-shadow: 0 1px 2px rgba(0,0,0,.3);
-      margin-bottom: 2rem;
-      animation: fadeIn 2.2s ease-in forwards;
+      margin-bottom: 1.8rem;
+      animation: fadeIn 1.5s ease-out .4s forwards;
     }
 
-    /* --- CENTER CONTENT --- */
+    /* center */
     main {
       flex-grow: 1;
       display: flex;
@@ -58,45 +61,53 @@
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      margin-top: -3rem; /* lifts up slightly for visual balance */
+      margin-top: -2rem; /* lift the middle a little */
     }
 
     h1 {
-      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-size: clamp(2.1rem, 4.5vw, 3rem);
       font-weight: 500;
-      text-shadow: 0 2px 6px rgba(0,0,0,.4); 
-      animation: fadeIn 2.5s ease-in forwards;
+      text-shadow: 0 2px 6px rgba(0,0,0,.4);
+      animation: fadeIn 1.8s ease-out .8s forwards;
     }
 
     p {
+      max-width: 48rem;
       font-size: 1rem;
       line-height: 1.6;
-      opacity: .92;
+      opacity: .95;
       text-shadow: 0 1px 4px rgba(0,0,0,.35);
-       animation: fadeIn 3s ease-in forwards;
+      margin-top: 0.8rem;
+      animation: fadeIn 2.2s ease-out 1.2s forwards;
     }
 
-    /* --- FOOTER --- */
+    /* footer */
     footer {
       font-size: .7rem;
       color: rgba(255,255,255,.75);
       padding-bottom: 1.2rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,.4);
     }
 
     @media (max-width: 540px) {
       body { background-attachment: scroll; }
+      .brand { font-size: 1.35rem; }
+      .tag { font-size: .78rem; }
+      h1 { font-size: 2.2rem; }
+      p { padding: 0 1rem; }
     }
-  /* Smooth fade-in effect */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
+
+    /* Smooth fade-in effect */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="brand">THE BENDECK GROUP</div>
-    <div class="tag">Private Investment & Holdings</div>
+    <div class="tag">Private Investment &amp; Holdings</div>
   </header>
 
   <main>
